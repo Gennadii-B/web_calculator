@@ -56,9 +56,9 @@
                            <td>5</td>
                          </tr>
 
-
+                    <%= Main.allResultsV2() %>
         </table><br/><br/>
-         <%= Main.allResults() %>
+
 
 
   </body>

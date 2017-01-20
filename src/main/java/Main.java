@@ -31,12 +31,14 @@ public class Main {
     }
 
 
-    public static String allResults() throws SQLException{
+    public static String allResultsV2() throws SQLException{
         ArrayList<ExpLine> res = dao.getResultsFromDB();
         String results = "\n";
         for(ExpLine el : res){
-            results+= "id(" + el.getId() + ")      [ "
-                    + el.getExpression() + " ]    =    " + el.getResult() + "<br/>";
+            results+= "<tr> <td>" + el.getId() +"</td>" +
+                    "<td>" + el.getExpression() + "</td>" +
+                    "<td>" + el.getResult() + "</td> " +
+                    "</tr>";
         }
         return results;
     }
