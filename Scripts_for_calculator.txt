@@ -1,0 +1,37 @@
+
+////// создание БД //////////////
+
+CREATE DATABASE test
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Russian_Russia.1251'
+    LC_CTYPE = 'Russian_Russia.1251'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+	
+//////////////////////////////////////////	
+	
+//////// создание таблицы результатов ////////////////////////////	
+
+	CREATE TABLE public.calculator
+(
+    id integer NOT NULL DEFAULT nextval('calculator_id_seq'::regclass),
+    expression character varying COLLATE pg_catalog."default",
+    result character varying COLLATE pg_catalog."default",
+    CONSTRAINT calculator_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.calculator
+    OWNER to postgres;
+	
+//////////////!!!!!!!!!!!!!!!!!!!!!!////////////////////////////////	
+	
+	изменить в классе DAO properties на 
+	соответствуующие БД.
+	
+///////////////////////////////////////////////////////	
